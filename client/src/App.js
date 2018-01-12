@@ -1,10 +1,10 @@
 import React from 'react'
-import Layout from './components/structure/Layout'
 import {BrowserRouter} from 'react-router-dom'
+import DataProvider from './DataProvider'
 
 const App = () =>
   <BrowserRouter>
-    <Layout />
+    <DataProvider />
   </BrowserRouter>
 
 export default App

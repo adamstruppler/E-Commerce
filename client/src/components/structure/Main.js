@@ -3,6 +3,7 @@ import About from '../pages/About'
 import Home from '../pages/Home'
 import {Route} from 'react-router-dom'
 import AddProductContainer from '../pages/products/AddProductContainer'
+import ProductsContainer from '../pages/products/ProductsContainer'
 
 const style = {
   container: {
@@ -12,11 +13,12 @@ const style = {
   }
 }
 
-const Main = () => {
+const Main = ({domainData}) => {
   return (
     <main style={style.container}>
       <Route exact path='/' component={Home} />
       <Route path='/about' component={About} />
+      <Route path='/products' render={() => <ProductsContainer domainData={domainData} />} />
       <Route path='/add-products' component={AddProductContainer} />
     </main>
   )

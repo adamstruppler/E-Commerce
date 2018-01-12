@@ -3,14 +3,18 @@ import Main from './Main'
 import Footer from './Footer'
 import Header from './header/Header'
 
-const Layout = () => {
+const Layout = ({domainData}) => {
   return (
     <div>
       <Header />
-      <Main />
+      <Main domainData={domainData} />
       <Footer />
     </div>
   )
 }
+
+// Layout.propTypes = {
+//   domainData: AppPropTypes.domainData
+// }
 
 export default Layout
