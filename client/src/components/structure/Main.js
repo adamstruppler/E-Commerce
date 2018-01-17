@@ -4,6 +4,9 @@ import Home from '../pages/Home'
 import {Route} from 'react-router-dom'
 import AddProductContainer from '../pages/products/AddProductContainer'
 import ProductsContainer from '../pages/products/ProductsContainer'
+import ProductPage from '../pages/products/ProductPage'
+import SignUpContainer from '../pages/authentication/SignUpContainer'
+import PropTypes from 'prop-types'
 
 const style = {
   container: {
@@ -20,8 +23,14 @@ const Main = ({domainData}) => {
       <Route path='/about' component={About} />
       <Route path='/products' render={() => <ProductsContainer domainData={domainData} />} />
       <Route path='/add-products' component={AddProductContainer} />
+      <Route path='/product/:_id' component={ProductPage} />
+      <Route path='/sign-up' component={SignUpContainer} />
     </main>
   )
+}
+
+Main.propTypes = {
+  domainData: PropTypes.func.isRequired
 }
 
 export default Main

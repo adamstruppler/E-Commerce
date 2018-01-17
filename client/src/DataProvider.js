@@ -27,6 +27,14 @@ class DataProvider extends Component {
         this.methods.getAllProducts()
       })
     }
+    // viewProduct: (id) => {
+    //   $.ajax({
+    //     url: `/api/products/${id}`,
+    //     method: 'GET'
+    //   }).done((response) => {
+    //     console.log(response, 'View Product')
+    //   })
+    // }
   }
 
   componentDidMount () {
