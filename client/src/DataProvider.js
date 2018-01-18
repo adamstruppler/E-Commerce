@@ -35,6 +35,7 @@ class DataProvider extends Component {
           this.setState({user})
           return user
         })
+      console.log(user)
     }
     // viewProduct: (id) => {
     //   $.ajax({

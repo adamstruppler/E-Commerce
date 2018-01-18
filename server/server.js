@@ -1,4 +1,6 @@
 const express = require('express')
+const session = require('express-session')
+const passport = require('passport')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const app = express()
@@ -12,6 +14,15 @@ mongoose.connect('mongodb://localhost/__YOUR_DB__')
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(session({
+  name: 'ecommerce',
+  secret: 'shhhh',
+  secure: false
+}))
+app.use(passport.initialize())
+app.use(passport.session())
+require('./passport/Strategies')(passport)
+require('./passport/Routes')(app, passport)
 app.use(require('./config/error-handler'))
 
 app.use('/api/products', productRoutes)
