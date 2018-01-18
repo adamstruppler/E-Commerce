@@ -24,7 +24,7 @@ const Main = ({domainData}) => {
       <Route path='/products' render={() => <ProductsContainer domainData={domainData} />} />
       <Route path='/add-products' component={AddProductContainer} />
       <Route path='/product/:_id' component={ProductPage} />
-      <Route path='/sign-up' component={SignUpContainer} />
+      <Route path='/sign-up' render={() => <SignUpContainer domainData={domainData} />} />
     </main>
   )
 }
