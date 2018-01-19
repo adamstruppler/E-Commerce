@@ -1,11 +1,9 @@
 import React, {Component} from 'react'
 import {withRouter} from 'react-router-dom'
-import SignUpForm from './SignUpForm'
+import LoginForm from './LoginForm'
 
-class SignUpContainer extends Component {
+class LoginContainer extends Component {
   state = {
-    firstName: undefined,
-    lastName: undefined,
     email: undefined,
     password: undefined
   }
@@ -14,19 +12,16 @@ class SignUpContainer extends Component {
 
   onSubmit = (e) => {
     e.preventDefault()
-    this.props.domainData.newUser(this.state)
+    this.props.domainData.loginUser(this.state.email, this.state.password)
       .then(() => this.props.history.push('/'))
       .catch(err => alert(err, Object.keys(err)))
   }
 
   render () {
-    console.log(this.props)
     return (
       <div>
-        <SignUpForm
+        <LoginForm
           {...this.state}
-          firstName={this.firstName}
-          lastName={this.lastName}
           email={this.email}
           password={this.password}
           handleOnChange={this.handleOnChange}
@@ -37,4 +32,4 @@ class SignUpContainer extends Component {
   }
 }
 
-export default withRouter(SignUpContainer)
+export default withRouter(LoginContainer)

@@ -6,6 +6,7 @@ import AddProductContainer from '../pages/products/AddProductContainer'
 import ProductsContainer from '../pages/products/ProductsContainer'
 import ProductPage from '../pages/products/ProductPage'
 import SignUpContainer from '../pages/authentication/SignUpContainer'
+import LoginContainer from '../pages/authentication/LoginContainer'
 import PropTypes from 'prop-types'
 
 const style = {
@@ -25,6 +26,7 @@ const Main = ({domainData}) => {
       <Route path='/add-products' component={AddProductContainer} />
       <Route path='/product/:_id' component={ProductPage} />
       <Route path='/sign-up' render={() => <SignUpContainer domainData={domainData} />} />
+      <Route path='/login' render={() => <LoginContainer domainData={domainData} />} />
     </main>
   )
 }
