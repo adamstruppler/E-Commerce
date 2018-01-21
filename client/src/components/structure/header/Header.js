@@ -2,7 +2,7 @@ import React from 'react'
 import NavItem from './NavItem'
 import HeaderLink from './HeaderLink'
 import Button from 'material-ui/Button'
-import Menu, { MenuItem } from 'material-ui/Menu'
+import Menu, {MenuItem} from 'material-ui/Menu'
 
 const style = {
   container: {

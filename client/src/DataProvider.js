@@ -43,13 +43,13 @@ class DataProvider extends Component {
           this.setState({user})
           return user
         }),
-    getUser: () =>
-      UserApi.getUser()
-        .then(user => {
-          console.log(user, 'GET USER')
-          this.setState({user})
-          return user
-        }),
+    // getUser: () =>
+    //   UserApi.getUser()
+    //     .then(user => {
+    //       console.log(user, 'GET USER')
+    //       this.setState({user})
+    //       return user
+    //     }),
     logoutUser: () =>
       UserApi.logoutUser()
         .then(() => {
@@ -68,7 +68,7 @@ class DataProvider extends Component {
 
   componentDidMount () {
     this.methods.getAllProducts()
-    this.methods.getUser()
+    // this.methods.getUser()
   }
 
   render () {
