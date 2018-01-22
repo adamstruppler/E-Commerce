@@ -10,7 +10,8 @@ const style = {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
-    paddingTop: 15
+    paddingTop: 15,
+    backgroundColor: '#004410'
   }
 }
 

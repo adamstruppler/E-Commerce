@@ -12,8 +12,7 @@ import PropTypes from 'prop-types'
 const style = {
   container: {
     textAlign: 'center',
-    padding: 20,
-    backgroundColor: '#0f8c3b'
+    padding: 20
   }
 }
 
