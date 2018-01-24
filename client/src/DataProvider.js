@@ -20,6 +20,15 @@ class DataProvider extends Component {
         this.setState({isLoaded: true, products: response.data})
       })
     },
+    addProduct: (newProduct) => {
+      $.ajax({
+        url: '/api/products',
+        method: 'POST',
+        data: newProduct
+      }).done((response) => {
+        this.methods.getAllProducts()
+      })
+    },
     deleteProduct: (id) => {
       $.ajax({
         url: `/api/products/${id}`,

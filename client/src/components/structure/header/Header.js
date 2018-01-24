@@ -3,6 +3,7 @@ import NavItem from './NavItem'
 import HeaderLink from './HeaderLink'
 import Button from 'material-ui/Button'
 import Menu, {MenuItem} from 'material-ui/Menu'
+import PropTypes from 'prop-types'
 
 const style = {
   container: {
@@ -46,6 +47,10 @@ const Header = ({domainData}) => {
       </nav>
     </header>
   )
+}
+
+Header.propTypes = {
+  domainData: PropTypes.func.isRequired
 }
 
 export default Header

@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import AddProductForm from './AddProductForm'
 import $ from 'jquery'
+import {withRouter} from 'react-router-dom'
 
 class AddProductContainer extends Component {
  state = {
@@ -12,16 +13,11 @@ class AddProductContainer extends Component {
 
  onChangeHandler = (e) => this.setState({[e.target.id]: e.target.value})
 
- submitProductToServer = () => {
-   const {name, price, img, category} = this.state
-   const newProduct = {name, price, img, category}
-   $.ajax({
-     url: '/api/products',
-     method: 'POST',
-     data: newProduct
-   }).done((response) => {
-     console.log(response, 'hey!')
-   })
+ onSubmit = (event) => {
+   event.preventDefault()
+   const product = {name: this.state.name, category: this.state.category, price: Number(this.state.price), img: this.state.img}
+   this.props.domainData.addProduct(product)
+   this.props.history.push('/products')
  }
 
  render () {
@@ -29,10 +25,10 @@ class AddProductContainer extends Component {
      <AddProductForm
        {...this.state}
        onChangeHandler={this.onChangeHandler}
-       submitProductToServer={this.submitProductToServer}
+       onSubmit={this.onSubmit}
      />
    )
  }
 }
 
-export default AddProductContainer
+export default withRouter(AddProductContainer)

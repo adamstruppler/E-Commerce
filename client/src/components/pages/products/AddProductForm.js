@@ -14,7 +14,7 @@ const style = {
   }
 }
 
-const AddProductForm = ({onChangeHandler, name, price, img, category, submitProductToServer}) => {
+const AddProductForm = ({onChangeHandler, name, price, img, category, onSubmit}) => {
   return (
     <div style={style.container}>
       <Card>
@@ -33,7 +33,7 @@ const AddProductForm = ({onChangeHandler, name, price, img, category, submitProd
             <TextField label='Category' placeHolder='Category' onChange={onChangeHandler} id={'category'} />
           </div>
           <div>
-            <Button raised disabled={!name || !price || !img || !category} onClick={submitProductToServer}>SUBMIT</Button>
+            <Button raised disabled={!name || !price || !img || !category} onClick={onSubmit}>SUBMIT</Button>
           </div>
         </form>
       </Card>
@@ -43,7 +43,11 @@ const AddProductForm = ({onChangeHandler, name, price, img, category, submitProd
 
 AddProductForm.propTypes = {
   onChangeHandler: PropTypes.func.isRequired,
-  submitProductToServer: PropTypes.func.isRequired
+  onSubmit: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired
 }
 
 export default AddProductForm

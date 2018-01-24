@@ -22,7 +22,7 @@ const Main = ({domainData}) => {
       <Route exact path='/' component={Home} />
       <Route path='/about' component={About} />
       <Route path='/products' render={() => <ProductsContainer domainData={domainData} />} />
-      <Route path='/add-products' component={AddProductContainer} />
+      <Route path='/add-products' render={() => <AddProductContainer domainData={domainData} />} />
       <Route path='/product/:_id' component={ProductPage} />
       <Route path='/sign-up' render={() => <SignUpContainer domainData={domainData} />} />
       <Route path='/login' render={() => <LoginContainer domainData={domainData} />} />

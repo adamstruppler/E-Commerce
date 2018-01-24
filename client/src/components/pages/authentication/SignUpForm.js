@@ -13,15 +13,15 @@ const SignUpForm = ({firstName, lastName, email, handleOnChange, onSubmit, passw
           <Typography type='headline' component='h2'>
             First Name:
           </Typography>
-          <input type='text' id='lastName' onChange={handleOnChange} />
+          <input type='text' id='firstName' onChange={handleOnChange} />
           <Typography type='headline' component='h2'>
             Last Name:
           </Typography>
-          <input type='text' id='email' onChange={handleOnChange} />
+          <input type='text' id='lastName' onChange={handleOnChange} />
           <Typography type='headline' component='h2'>
             Email:
           </Typography>
-          <input type='text' id='firstName' onChange={handleOnChange} />
+          <input type='text' id='email' onChange={handleOnChange} />
         </Card>
         <Card raised='true'>
           <Typography type='headline' component='h2'>
