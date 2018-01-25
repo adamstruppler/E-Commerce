@@ -8,6 +8,7 @@ import ProductPage from '../pages/products/ProductPage'
 import SignUpContainer from '../pages/authentication/SignUpContainer'
 import LoginContainer from '../pages/authentication/LoginContainer'
 import PropTypes from 'prop-types'
+import CartContainer from '../pages/products/CartContainer'
 
 const style = {
   container: {
@@ -26,6 +27,7 @@ const Main = ({domainData}) => {
       <Route path='/product/:_id' component={ProductPage} />
       <Route path='/sign-up' render={() => <SignUpContainer domainData={domainData} />} />
       <Route path='/login' render={() => <LoginContainer domainData={domainData} />} />
+      <Route path='/cart' render={() => <CartContainer domainData={domainData} />} />
     </main>
   )
 }

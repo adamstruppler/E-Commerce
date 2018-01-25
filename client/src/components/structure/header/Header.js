@@ -2,7 +2,7 @@ import React from 'react'
 import NavItem from './NavItem'
 import HeaderLink from './HeaderLink'
 import Button from 'material-ui/Button'
-import Menu, {MenuItem} from 'material-ui/Menu'
+// import Menu, {MenuItem} from 'material-ui/Menu'
 import PropTypes from 'prop-types'
 
 const style = {
@@ -42,6 +42,11 @@ const Header = ({domainData}) => {
         {
           domainData.loggedIn
             ? <HeaderLink>{domainData.user.local.email}</HeaderLink>
+            : null
+        }
+        {
+          domainData.loggedIn
+            ? <NavItem to='/cart'>Cart</NavItem>
             : null
         }
       </nav>

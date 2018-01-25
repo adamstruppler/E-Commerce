@@ -11,7 +11,7 @@ const styles = {
   }
 }
 
-const ProductCard = ({name, price, img, category, _id, deleteProduct}) => {
+const ProductCard = ({name, price, img, category, _id, deleteProduct, addItemToCart}) => {
   return (
     <div>
       <Card>
@@ -30,9 +30,8 @@ const ProductCard = ({name, price, img, category, _id, deleteProduct}) => {
             View
             </Link>
           </Button>
-          <Button raised color='primary' onClick={() => deleteProduct(_id)}>
-            Delete
-          </Button>
+          <Button raised color='primary' onClick={() => deleteProduct(_id)}>Delete</Button>
+          <Button raised color='primary' onClick={() => addItemToCart(_id)}>Add Item to Cart</Button>
         </CardActions>
       </Card>
     </div>
@@ -45,7 +44,8 @@ ProductCard.propTypes = {
   img: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
   _id: PropTypes.string.isRequired,
-  deleteProduct: PropTypes.func.isRequired
+  deleteProduct: PropTypes.func.isRequired,
+  addItemToCart: PropTypes.func.isRequired
 }
 
 export default ProductCard

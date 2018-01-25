@@ -2,7 +2,7 @@ import React from 'react'
 import ProductCard from './ProductCard'
 import PropTypes from 'prop-types'
 
-const ProductList = ({products, deleteProduct}) => {
+const ProductList = ({products, deleteProduct, addItemToCart}) => {
   return (
     <div>
       {
@@ -10,6 +10,7 @@ const ProductList = ({products, deleteProduct}) => {
           return <ProductCard
             {...product}
             deleteProduct={deleteProduct}
+            addItemToCart={addItemToCart}
           />
         })
       }
@@ -19,7 +20,8 @@ const ProductList = ({products, deleteProduct}) => {
 
 ProductList.propTypes = {
   products: PropTypes.object.isRequired,
-  deleteProduct: PropTypes.func.isRequired
+  deleteProduct: PropTypes.func.isRequired,
+  addItemToCart: PropTypes.func.isRequired
 }
 
 export default ProductList

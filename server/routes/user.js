@@ -30,7 +30,6 @@ Router.route('/')
 
 Router.route('/cart/:userId')
   .put((req, res) => {
-    console.log(req.params)
     const userId = req.params.userId
     User.findById({_id: userId}, (err, user) => {
       if (err) {
@@ -82,33 +81,6 @@ Router.route('/removeFromCart/:userId')
       }
     })
   })
-
-// Router.route('/cart/:userId')
-//   .put((req, res) => {
-//     const userId = req.params.userId
-//     User.findById({_id: userId}, (err, user) => {
-//       if (err) {
-//         res.json({error: err})
-//       } else {
-//         user.cart = user.cart.push(req.body.product_id)
-//         user.save((err, user) => {
-//           if (err) {
-//             res.json({error: err})
-//           } else {
-//             User.findById(user._id)
-//               .populate('cart')
-//               .exec((err, user) => {
-//                 if (err) {
-//                   res.json({error: err})
-//                 } else {
-//                   res.json({msg: 'SUCCESS', data: user.cart})
-//                 }
-//               })
-//           }
-//         })
-//       }
-//     })
-//   })
 
 Router.route('/:userId')
   .get((req, res) => {

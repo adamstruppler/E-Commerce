@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const ProductPageCard = ({product}) => {
   return (
@@ -9,6 +10,10 @@ const ProductPageCard = ({product}) => {
       <h2>{product.category}</h2>
     </div>
   )
+}
+
+ProductPageCard.propTypes = {
+  product: PropTypes.string.isRequired
 }
 
 export default ProductPageCard

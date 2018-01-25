@@ -2,6 +2,7 @@ import React from 'react'
 import Main from './Main'
 import Footer from './Footer'
 import Header from './header/Header'
+import PropTypes from 'prop-types'
 
 const Layout = ({domainData}) => {
   return (
@@ -13,8 +14,8 @@ const Layout = ({domainData}) => {
   )
 }
 
-// Layout.propTypes = {
-//   domainData: AppPropTypes.domainData
-// }
+Layout.propTypes = {
+  domainData: PropTypes.func.isRequired
+}
 
 export default Layout
