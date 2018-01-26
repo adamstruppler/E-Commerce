@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import AddProductForm from './AddProductForm'
-import $ from 'jquery'
 import {withRouter} from 'react-router-dom'
 
 class AddProductContainer extends Component {

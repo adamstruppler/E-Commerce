@@ -2,7 +2,7 @@ import React from 'react'
 import CartCard from './CartCard'
 import PropTypes from 'prop-types'
 
-const CartList = ({cartProducts, cartReady}) => {
+const CartList = ({cartProducts, cartReady, removeItemFromCart}) => {
   return (
     <div>
       {
@@ -10,17 +10,19 @@ const CartList = ({cartProducts, cartReady}) => {
           ? cartProducts.map(product => {
             return <CartCard
               product={product}
+              removeItemFromCart={removeItemFromCart}
             />
           })
-          : 'Cart is Empty'
+          : 'Cart is Empty!!!!'
       }
     </div>
   )
 }
 
 CartList.propTypes = {
-  cartProducts: PropTypes.func.isRequired,
-  cartReady: PropTypes.bool.isRequired
+  cartProducts: PropTypes.object.isRequired,
+  cartReady: PropTypes.bool.isRequired,
+  removeItemFromCart: PropTypes.func.isRequired
 }
 
 export default CartList
