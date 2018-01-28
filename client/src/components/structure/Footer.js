@@ -4,7 +4,7 @@ const style = {
   container: {
     textAlign: 'center',
     padding: 20,
-    backgroundColor: '#8ceaad'
+    backgroundColor: '#37474F'
   }
 }
 

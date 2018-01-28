@@ -7,7 +7,10 @@ import PropTypes from 'prop-types'
 
 const styles = {
   media: {
-    height: 200
+    height: '200',
+    width: '100%',
+    display: 'flex',
+    border: '2px red'
   }
 }
 
@@ -22,14 +25,11 @@ const ProductCard = ({name, price, img, category, _id, deleteProduct, addItemToC
         <CardContent>
           <Typography type='headline' component='h2'>
             {name}
+            {price}
           </Typography>
         </CardContent>
         <CardActions>
-          <Button raised color='primary'>
-            <Link to={`/product/${_id}`}>
-            View
-            </Link>
-          </Button>
+          <Button raised color='primary'><Link to={`/product/${_id}`}>View</Link></Button>
           <Button raised color='primary' onClick={() => deleteProduct(_id)}>Delete</Button>
           <Button raised color='primary' onClick={() => addItemToCart(_id)}>Add Item to Cart</Button>
         </CardActions>
